@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Yiming's Maze Puzzles</title>
+
+	<!-- scripts -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	
+
+	<!-- stylings -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+	
+</head>
+<body>
+	<div id="wrapper" style="margin-left:auto; margin-right:auto;">
+		<div class="header">
+        	<h1>Yiming's Maze Game</h1>
+        	<p style="margin-bottom: 0">Complete the Maze in <span id="timeLimit"></span> seconds</p>
+        </div>
+        <button type="button" class="btn btn-secondary helpBtn" data-toggle="modal" data-target="#controls">
+		  How to Play?
+		</button>
+		<button type="button" class="btn btn-warning" id="skipLvl">
+		  Skip Level
+		</button>
+        <div id="maze">
+            <canvas id="canvas" width="523" height="523" style="margin-left:auto; margin-right:auto">
+        	</canvas>
+            <div id="timeBadge"></div>
+        </div>
+    </div>
+
+
+
+    <div class="modal" id="resultModal" >
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="gamehead"></h5>
+	      </div>
+	      <div class="modal-body">
+	      	<span class='gameMessage'></span>
+	      </div>
+	      <div class="modal-footer">
+	        <button class="btn btn-primary" id="restart">Next Level!</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+    <div class="modal fade" id="controls" tabindex="-1" role="dialog" aria-labelledby="controlsModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title">Controls</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	        Navigate using up-down-left-right arrow keys. Solve the maze in Time!
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Got It!</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+    <script src="script.js"></script>
+</body>
+</html>
